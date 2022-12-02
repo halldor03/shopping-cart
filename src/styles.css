@@ -1,0 +1,105 @@
+/* to show boxes */
+/* * {
+  border: 1px black solid;
+} */
+
+/* simple reset */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.25);
+  background-image: url("../public/img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: lighten;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background: rgba(255, 255, 255, 0.5);
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.navLogo {
+  height: 6rem;
+  display: flex;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
+a[class$="Link"],
+a.active {
+  font-size: 1.5rem;
+  color: inherit;
+}
+
+a.active {
+  text-decoration: underline;
+}
+
+.shoppingCartIcon {
+  height: 2rem;
+  cursor: pointer;
+}
+
+.material-symbols-rounded {
+  display: flex;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.shoppingCartQuantity {
+  position: relative;
+  top: -130%;
+  right: -60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+  background-color: rgb(255, 0, 0, 0.7);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+}
+
+main {
+  height: 100%;
+}
+
+.shopContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.plantPhoto {
+  height: 400px;
+  width: 300px;
+}
+
+footer {
+  background: rgba(255, 255, 255, 0.5);
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
