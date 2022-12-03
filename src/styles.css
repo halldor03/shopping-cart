@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
 /* to show boxes */
 /* * {
   border: 1px black solid;
@@ -8,7 +10,7 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   text-decoration: none;
 }
@@ -20,16 +22,20 @@ body {
   background-size: cover;
   background-position: center;
   background-blend-mode: lighten;
+  background-attachment: fixed;
+  overflow-y: overlay;
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 8rem 1fr 4rem;
 }
 
 nav {
-  background: rgba(255, 255, 255, 0.5);
-  height: 8rem;
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
   padding: 1rem 2rem 1rem 2rem;
@@ -47,14 +53,17 @@ nav {
   flex-grow: 1;
 }
 
-a[class$="Link"],
-a.active {
+a {
   font-size: 1.5rem;
-  color: inherit;
+  color: rgb(0, 0, 0, 0.5);
+}
+
+a:hover {
+  color: rgb(0, 0, 0, 1);
 }
 
 a.active {
-  text-decoration: underline;
+  color: rgb(0, 0, 0, 1);
 }
 
 .shoppingCartIcon {
@@ -70,35 +79,71 @@ a.active {
 
 .shoppingCartQuantity {
   position: relative;
-  top: -130%;
-  right: -60%;
+  top: -125%;
+  right: -65%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.85rem;
   background-color: rgb(255, 0, 0, 0.7);
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.1rem;
+  height: 1.1rem;
   border-radius: 50%;
 }
 
-main {
-  height: 100%;
-}
-
 .shopContainer {
+  padding: 2rem 10rem 2rem 10rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+}
+
+.plantElement {
+  display: flex;
+  flex-direction: column;
 }
 
 .plantPhoto {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   height: 400px;
   width: 300px;
 }
 
-footer {
+.plantInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: rgba(255, 255, 255, 0.5);
-  height: 4rem;
+  padding-bottom: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.plantName {
+  font-weight: 600;
+  padding: 0.5rem;
+}
+
+.addToCartButton {
+  appearance: none;
+  background: rgba(255, 255, 255, 0.75);
+  margin-top: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.addToCartButton:hover {
+  background: rgb(209, 209, 209);
+}
+
+footer {
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;

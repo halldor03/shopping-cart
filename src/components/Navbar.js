@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav>
+    <>
       <NavLink to="/">
         <img className="navLogo" src="../img/logo.webp" />
       </NavLink>
@@ -22,9 +22,9 @@ export default function Navbar() {
         </NavLink>
         <div className="shoppingCartIcon">
           <span className="material-symbols-rounded">shopping_cart</span>
-          <div className="shoppingCartQuantity">1</div>
+          {/* <div className="shoppingCartQuantity">0</div> */}
         </div>
       </div>
-    </nav>
+    </>
   );
 }
