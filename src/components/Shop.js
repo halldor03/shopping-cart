@@ -1,8 +1,6 @@
-import Cart from "./Cart";
-
 export default function Shop({
   plantsInCart,
-  setPlantsInCard,
+  setPlantsInCart,
   plants,
   setPlants,
 }) {
@@ -31,7 +29,13 @@ export default function Shop({
   };
 
   const addPlantToCart = (plant) => {
-    setPlantsInCard([...plantsInCart, plant]);
+    if (plantsInCart.filter((e) => e.name === plant.name).length > 0) {
+      setPlantsInCart(
+        plantsInCart.map((el) =>
+          el.name === plant.name ? { ...el, quantity: (el.quantity += 1) } : el
+        )
+      );
+    } else setPlantsInCart([...plantsInCart, plant]);
   };
 
   return (
@@ -49,7 +53,12 @@ export default function Shop({
               />
               <div className="plantInfo">
                 <div className="plantName">{plant.name}</div>
-                <div className="plantPrice">{plant.price} PLN</div>
+                <div className="plantPrice">
+                  {Intl.NumberFormat("de-DE", {
+                    style: "currency",
+                    currency: "PLN",
+                  }).format(plant.price)}{" "}
+                </div>
                 <button
                   className="addToCartButton"
                   onClick={() => addPlantToCart(plant)}
@@ -61,7 +70,6 @@ export default function Shop({
           );
         })}
       </div>
-      <Cart plantsInCart={plantsInCart} />
     </>
   );
 }

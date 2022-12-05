@@ -23,7 +23,6 @@ body {
   background-position: center;
   background-blend-mode: lighten;
   background-attachment: fixed;
-  overflow-y: overlay;
 }
 
 #root {
@@ -150,25 +149,107 @@ footer {
   align-items: center;
 }
 
-/* MODAL */
-#cartModal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+/* MODAL BACKGROUND */
+#modalBackground {
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content/Box */
-.modalContent {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+/* MODAL */
+#cartModal {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  width: 30rem;
+  height: 100vh;
+  background-color: rgb(255, 255, 255, 0.9);
+  animation-name: animateright;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  padding: 2rem;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#cartModal::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes animateright {
+  from {
+    right: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.cartTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.plantInCart {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px black solid;
+}
+
+#cartModal div:last-of-type {
+  border-bottom: 0;
+}
+
+.plantInCartImage {
+  height: 160px;
+  width: 120px;
+}
+
+.plantInCartInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0rem 1rem 0rem 1rem;
+  line-height: 1.7;
+}
+
+.plantInCartName {
+  font-weight: 600;
+}
+
+.totalOrder {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.checkoutButton {
+  appearance: none;
+  background: rgb(221, 221, 221);
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.checkoutButton:hover {
+  background: rgb(209, 209, 209);
 }
