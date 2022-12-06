@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 /* to show boxes */
 /* * {
@@ -10,8 +10,8 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-family: "Indie Flower", cursive;
+  font-size: 18px;
   text-decoration: none;
 }
 
@@ -23,9 +23,12 @@ body {
   background-position: center;
   background-blend-mode: lighten;
   background-attachment: fixed;
+  overflow-y: overlay;
 }
 
 #root {
+  height: 100vh;
+
   display: grid;
   grid-template-rows: 8rem 1fr 4rem;
 }
@@ -52,7 +55,7 @@ nav {
 }
 
 a {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: rgb(0, 0, 0, 0.5);
 }
 
@@ -71,6 +74,7 @@ a.active {
   font-size: 2rem;
   cursor: pointer;
   color: rgb(0, 0, 0, 0.5);
+  user-select: none;
 }
 
 .material-symbols-rounded:hover {
@@ -123,6 +127,10 @@ a.active {
   border-bottom-right-radius: 1rem;
 }
 
+.plantInfo > div {
+  font-size: 1.2rem;
+}
+
 .plantName {
   font-weight: 600;
   padding: 0.5rem;
@@ -143,6 +151,7 @@ a.active {
 }
 
 footer {
+  font-size: 1.1rem;
   background: rgba(255, 255, 255, 0.6);
   display: flex;
   justify-content: center;
@@ -173,13 +182,13 @@ footer {
   width: 30rem;
   height: 100vh;
   background-color: rgb(255, 255, 255, 0.9);
-  animation-name: animateright;
-  animation-duration: 0.4s;
-  animation-timing-function: ease-in-out;
   padding: 2rem;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  animation-name: animateright;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
 }
 
 #cartModal::-webkit-scrollbar {
@@ -198,10 +207,17 @@ footer {
 }
 
 .cartTitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   padding-bottom: 1rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.cartTitle > span {
+  font-size: 1.5rem;
+  color: inherit;
+  padding-left: 0.5rem;
 }
 
 .plantInCart {
@@ -231,17 +247,35 @@ footer {
 }
 
 .plantInCartName {
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
+.quantityWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.plantInCartPrice {
+  font-size: 1.2rem;
+}
+
+.plantInCartQuantity {
+  font-size: 1.3rem;
+  padding: 0rem 0.25rem 0rem 0.25rem;
+}
+
 .totalOrder {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   padding-bottom: 1rem;
   text-align: center;
 }
 
 .checkoutButton {
+  font-size: 1.1rem;
   appearance: none;
   background: rgb(221, 221, 221);
   padding: 0.25rem;
@@ -252,4 +286,51 @@ footer {
 
 .checkoutButton:hover {
   background: rgb(209, 209, 209);
+}
+
+#comingSoonMessage {
+  opacity: 0;
+  text-align: center;
+  padding-top: 0.5rem;
+  color: red;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.homeContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.homeTitle {
+  font-family: "Indie Flower", cursive;
+  font-size: 6rem;
+  background: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  text-align: left;
+  padding-left: 5rem;
+  margin-bottom: 2rem;
+}
+
+.homeTitleHidden {
+  opacity: 0;
+  font-family: "Indie Flower", cursive;
+  font-size: 6rem;
+  background: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  text-align: left;
+  padding-left: 5rem;
+  margin-bottom: 2rem;
+}
+
+.homeAdditional {
+  font-family: "Indie Flower", cursive;
+  font-size: 3rem;
+  background: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  text-align: right;
+  padding-right: 5rem;
+  margin-top: 2rem;
 }

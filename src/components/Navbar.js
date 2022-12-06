@@ -40,7 +40,7 @@ export default function Navbar({ plantsInCart }) {
           <span className="material-symbols-rounded" onClick={() => showCart()}>
             shopping_cart
           </span>
-          {plantsInCart.length === 0 ? null : (
+          {totalQuantity === 0 ? null : (
             <div className="shoppingCartQuantity">{totalQuantity}</div>
           )}
         </div>
