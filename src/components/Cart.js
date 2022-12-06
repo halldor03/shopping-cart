@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 export default function Cart({ plantsInCart, setPlantsInCart }) {
   const totalPrice = plantsInCart.reduce((accumulator, plant) => {
     return accumulator + plant.price * plant.quantity;

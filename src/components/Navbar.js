@@ -7,7 +7,7 @@ export default function Navbar({ plantsInCart }) {
     modal.style.display = "flex";
     modalBackground.style.display = "block";
     window.addEventListener("click", (e) => {
-      if (e.target == modalBackground) {
+      if (e.target === modalBackground) {
         modal.style.display = "none";
         modalBackground.style.display = "none";
       }
@@ -21,7 +21,10 @@ export default function Navbar({ plantsInCart }) {
   return (
     <>
       <NavLink to="/">
-        <img className="navLogo" src="../img/logo.webp" />
+        <img
+          className="navLogo"
+          src="http://halldor03.github.io/shopping-cart/img/logo.webp"
+        />
       </NavLink>
       <div className="navLinks">
         <NavLink to="/" className="homeLink">
