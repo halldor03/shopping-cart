@@ -23,7 +23,7 @@ export default function Navbar({ plantsInCart }) {
       <NavLink to="/">
         <img
           className="navLogo"
-          src="http://halldor03.github.io/shopping-cart/img/logo.webp"
+          src="https://halldor03.github.io/shopping-cart/img/logo.webp"
         />
       </NavLink>
       <div className="navLinks">
