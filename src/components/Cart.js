@@ -1,4 +1,6 @@
-export default function Cart({ plantsInCart, setPlantsInCart }) {
+import { useEffect } from "react";
+
+export default function Cart({ plants, plantsInCart, setPlantsInCart }) {
   const totalPrice = plantsInCart.reduce((accumulator, plant) => {
     return accumulator + plant.price * plant.quantity;
   }, 0);
@@ -9,10 +11,6 @@ export default function Cart({ plantsInCart, setPlantsInCart }) {
         el.name === plant.name ? { ...el, quantity: (el.quantity -= 1) } : el
       )
     );
-    setPlantsInCart(plantsInCart.filter((plant) => plant.quantity !== 0));
-    if (plant.quantity === 0) {
-      plant.quantity = 1;
-    }
   };
 
   const increasePlantQuantity = (plant) => {
@@ -30,6 +28,15 @@ export default function Cart({ plantsInCart, setPlantsInCart }) {
       message.style.opacity = 0;
     }, 800);
   };
+
+  useEffect(() => {
+    const numberOfPlantsWithQuantityOf0 = plantsInCart.filter(
+      (plant) => plant.quantity === 0
+    ).length;
+    if (numberOfPlantsWithQuantityOf0 === 1) {
+      setPlantsInCart(plantsInCart.filter((plant) => plant.quantity !== 0));
+    }
+  }, [plantsInCart]);
 
   return (
     <>

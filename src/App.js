@@ -21,7 +21,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/aloeVera2.webp",
       id: uniqid(),
-      quantity: 1,
     },
     {
       name: "Ceropegia woodii",
@@ -33,7 +32,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/ceropegia2.webp",
       id: uniqid(),
-      quantity: 1,
     },
     {
       name: "Epipremnum 'Marble Queen'",
@@ -45,7 +43,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/epiMarble2.webp",
       id: uniqid(),
-      quantity: 1,
     },
     {
       name: "Maranta 'Lemon Lime'",
@@ -57,7 +54,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/maranta2.webp",
       id: uniqid(),
-      quantity: 1,
     },
     {
       name: "Zamioculcas zamiifolia",
@@ -69,7 +65,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/zamio2.webp",
       id: uniqid(),
-      quantity: 1,
     },
     {
       name: "Ficus lyrata",
@@ -81,7 +76,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/ficus2.webp",
       id: uniqid(),
-      quantity: 1,
     },
     {
       name: "Monstera deliciosa",
@@ -93,7 +87,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/monstera2.webp",
       id: uniqid(),
-      quantity: 1,
     },
     {
       name: "Philodendron 'Birkin'",
@@ -105,7 +98,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/philo2.webp",
       id: uniqid(),
-      quantity: 1,
     },
     {
       name: "Strelitzia nicolai",
@@ -117,7 +109,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/strel2.webp",
       id: uniqid(),
-      quantity: 1,
     },
     {
       name: "Beaucarnea recurvata",
@@ -129,7 +120,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/beau2.webp",
       id: uniqid(),
-      quantity: 1,
     },
     {
       name: "Olea europea",
@@ -141,7 +131,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/olea2.webp",
       id: uniqid(),
-      quantity: 1,
     },
     {
       name: "Washingtonia robusta",
@@ -153,7 +142,6 @@ function App() {
       imgSrc2:
         "https://halldor03.github.io/shopping-cart/img/plants/wash2.webp",
       id: uniqid(),
-      quantity: 1,
     },
   ]);
   const [plantsInCart, setPlantsInCart] = useState([]);
@@ -180,7 +168,11 @@ function App() {
             }
           />
         </Routes>
-        <Cart plantsInCart={plantsInCart} setPlantsInCart={setPlantsInCart} />
+        <Cart
+          plants={plants}
+          plantsInCart={plantsInCart}
+          setPlantsInCart={setPlantsInCart}
+        />
       </main>
       <footer>Copyright &copy; Kacper Szulc 2022</footer>
     </>

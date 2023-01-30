@@ -29,21 +29,21 @@ export default function Shop({
   };
 
   const addPlantToCart = (plant) => {
-    //SOLVES PROBLEM WHEN AFTER REMOVING PLANTS FROM CART, NEXT TIME IT ADDS 2 INSTEAD OF ONE
-    if (
-      plant.quantity === 2 &&
-      plantsInCart.filter((e) => e.name === plant.name).length === 0
-    ) {
-      plant.quantity = 1;
-    }
-    //
     if (plantsInCart.filter((e) => e.name === plant.name).length > 0) {
       setPlantsInCart(
         plantsInCart.map((el) =>
           el.name === plant.name ? { ...el, quantity: (el.quantity += 1) } : el
         )
       );
-    } else setPlantsInCart([...plantsInCart, plant]);
+    } else
+      setPlantsInCart([
+        ...plantsInCart,
+        {
+          ...plant,
+          quantity: 1,
+          isInCart: true,
+        },
+      ]);
   };
 
   return (
